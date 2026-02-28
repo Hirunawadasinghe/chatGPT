@@ -1,11 +1,11 @@
 {
     "name": "ChatGPT",
     "icon": "assets/favicon.ico",
-    "url": "apps/my-app/",
+    "url": "https://hirunawadasinghe.github.io/chatGPT/",
     "width": "600px",
     "height": "400px",
     "resizable": "true",
-    "publish": "com.mydev.app",
+    "publish": "hirunawadasinghe.github.io",
     "version": "1.0.0",
     "top": "100px",
     "left": "100px",
