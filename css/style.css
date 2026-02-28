@@ -1,0 +1,178 @@
+@charset "utf-8";
+
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap);
+
+:root {
+    --c1: #303030;
+    --c2: #2F2F2F;
+    --c3: #212121;
+}
+
+body {
+    margin: 0;
+    font-family: Poppins, Arial;
+    font-weight: 400;
+    color: white;
+    height: 100dvh;
+    background-color: var(--c3);
+}
+
+input,
+textarea,
+button,
+select {
+    font-family: Poppins, Arial;
+    font-weight: 400;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2C2C2C;
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #9F9F9F;
+    border-radius: 100px;
+    border: 2px solid #2C2C2C;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #D1D1D1;
+}
+
+.content-w {
+    height: 100%;
+    margin: 0 auto;
+    width: 95%;
+    max-width: 45rem;
+    display: flex;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+#content.open #grt-msg{
+    display: none;
+}
+
+#content.open #chat{
+    display: flex;
+    height: 100%;
+}
+
+#grt-msg {
+    font-size: 28px;
+    margin: 0 .5rem 40px .5rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#chat {
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    padding-right: .5rem;
+    animation: expand-chat .5s ease;
+}
+
+@keyframes expand-chat {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+.msg {
+    font-size: .925rem;
+    display: flex;
+    font-weight: 300;
+}
+
+.msg.user {
+    justify-content: right;
+}
+
+.msg.user div {
+    background-color: rgba(255, 255, 255, .1);
+    padding: .5rem 1rem;
+    border-radius: 18px;
+}
+
+.msg .load {
+    margin: 0 0 1px 1px;
+    width: 14px;
+    height: 14px;
+    background-color: white;
+    border-radius: 100px;
+    animation: msg-load .9s ease infinite;
+}
+
+@keyframes msg-load {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#in-form {
+    height: 2.5rem;
+    display: grid;
+    grid-template-columns: auto 2.5rem;
+    gap: .5rem;
+    padding: .55rem;
+    border-radius: 100px;
+    background-color: var(--c1);
+}
+
+#input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: .5rem;
+    resize: none;
+    color: white;
+    font-size: .925rem;
+    font-weight: 300;
+}
+
+#send-btn {
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#send-btn .fa-stop {
+    display: none;
+}
+
+#send-btn.stop .fa-arrow-up {
+    display: none;
+}
+
+#send-btn.stop .fa-stop {
+    display: block;
+}
